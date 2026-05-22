@@ -40,7 +40,7 @@ P(i,j) = d(0,i) + d(j,0) − d(i,j)
 
 ## Alínea A — Camiões de 26 ton (carga efetiva: 15 ton)
 
-![Dashboard Alínea A](images/tool_alinea_a.png)
+<img src="images/tool_alinea_a.png" alt="Dashboard Alínea A" width="500">
 
 | Rota | Destinos | km/dia | Motoristas |
 |---|---|---|---|
@@ -81,7 +81,7 @@ As rotas iniciais do algoritmo violavam os horários de entrega (chegadas após 
 
 Encomenda de **20 ton** (4 ton × 5 clientes: Manchester, Loughborough, Cambridge, Bristol, Londres).
 
-![Alínea C](images/tool_alinea_c.png)
+<img src="images/tool_alinea_c.png" alt="Alínea C" width="500">
 
 | Rota | Percurso | Duração | Custo |
 |---|---|---|---|
@@ -95,23 +95,23 @@ Encomenda de **20 ton** (4 ton × 5 clientes: Manchester, Loughborough, Cambridg
 
 Interface gráfica interativa desenvolvida em VBA para consulta e gestão de todas as soluções.
 
-![Dashboard principal](images/tool_dashboard.png)
+<img src="images/tool_dashboard.png" alt="Dashboard principal" width="500">
 
 ### Detalhe de rota
 
-![Detalhe de rota](images/tool_route_detail.png)
+<img src="images/tool_route_detail.png" alt="Detalhe de rota" width="500">
 
 ### Escalonamento quinzenal de motoristas
 
-![Escalonamento](images/tool_scheduling.png)
+<img src="images/tool_scheduling.png" alt="Escalonamento" width="500">
 
 ### Consulta de clientes e distâncias
 
-![Clientes](images/tool_clients.png)
+<img src="images/tool_clients.png" alt="Clientes" width="500">
 
 ### Pressupostos configuráveis
 
-![Pressupostos](images/tool_assumptions.png)
+<img src="images/tool_assumptions.png" alt="Pressupostos" width="500">
 
 **Funcionalidades:**
 - Consultar dados de cada solução, rota e escalonamento
