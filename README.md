@@ -20,8 +20,6 @@ A empresa fictícia **VENDE&TUDO Distribuição S.A.**, sediada em Santarém, re
 | Velocidade (autoestrada / nacional) | 75 km/h · 50 km/h |
 | Dias de trabalho por ano | 305 |
 
----
-
 ## Método — Vizinho Mais Próximo
 
 Heurística construtiva implementada em **VBA** com restrições de capacidade. Em cada passo seleciona o cliente não visitado mais próximo do ponto atual, até esgotar a capacidade do camião — gerando então uma nova rota.
@@ -40,11 +38,9 @@ A revisão bibliográfica cobre também o **Método Clarke & Wright** (versão s
 P(i,j) = d(0,i) + d(j,0) − d(i,j)
 ```
 
----
-
 ## Alínea A — Camiões de 26 ton (carga efetiva: 15 ton)
 
-<img src="images/map_routes_a.png" width="340" align="right"/>
+![Dashboard Alínea A](images/tool_alinea_a.png)
 
 | Rota | Destinos | km/dia | Motoristas |
 |---|---|---|---|
@@ -56,13 +52,7 @@ P(i,j) = d(0,i) + d(j,0) − d(i,j)
 
 **5 camiões · 7 motoristas · 3 173 km/dia · 1 368 321,80 €/ano**
 
-<br clear="right"/>
-
----
-
 ## Alínea B — Camiões de 40 ton (carga efetiva: 24 ton)
-
-<img src="images/map_routes_b.png" width="340" align="right"/>
 
 As rotas iniciais do algoritmo violavam os horários de entrega (chegadas após as 19h). Foram ajustadas com a criação de uma 4.ª rota dedicada aos destinos mais a sul.
 
@@ -75,10 +65,6 @@ As rotas iniciais do algoritmo violavam os horários de entrega (chegadas após 
 
 **4 camiões · 6 motoristas · 2 677 km/dia · 1 314 344,85 €/ano**
 
-<br clear="right"/>
-
----
-
 ## Comparação A vs B
 
 | | Alínea A (26 ton) | Alínea B (40 ton) | Diferença |
@@ -86,42 +72,38 @@ As rotas iniciais do algoritmo violavam os horários de entrega (chegadas após 
 | Rotas/dia | 5 | 4 | −1 |
 | Camiões | 5 | 4 | −1 |
 | Motoristas | 7 | 6 | −1 |
-| km/dia | 3 173 | 2 677 | **−496 km** |
-| Custo anual | 1 368 321,80 € | 1 314 344,85 € | **−53 976,95 €** |
+| km/dia | 3 173 | 2 677 | −496 km |
+| Custo anual | 1 368 321,80 € | 1 314 344,85 € | −53 976,95 € |
 
-> ✅ **Os camiões de 40 ton são a solução mais eficiente.** Apesar de custos unitários mais elevados, a redução de ~500 km/dia e de um condutor compensam largamente.
-
----
+✅ **Os camiões de 40 ton são a solução mais eficiente.** Apesar de custos unitários mais elevados, a redução de ~500 km/dia e de um condutor compensam largamente.
 
 ## Alínea C — Transporte Internacional (DAP para Inglaterra)
 
 Encomenda de **20 ton** (4 ton × 5 clientes: Manchester, Loughborough, Cambridge, Bristol, Londres).
 
+![Alínea C](images/tool_alinea_c.png)
+
 | Rota | Percurso | Duração | Custo |
 |---|---|---|---|
-| **1 — Terrestre** ✅ | Santarém → Vitória-Gasteiz → Le Mans → Londres | **~23h** | 6 140 € |
+| 1 — Terrestre ✅ | Santarém → Vitória-Gasteiz → Le Mans → Londres | ~23h | 6 140 € |
 | 2 — Lisboa–Southampton | Terrestre até Lisboa + ferry | ~4 dias | 4 817 € |
 | 3 — Corunha–Southampton | Terrestre até Corunha + ferry | ~3 dias | 6 269 € |
 
-> ✅ **Rota terrestre escolhida** — entrega em ~23h com um único meio de transporte, menor complexidade logística. A diferença de ~1 400 € face à opção mais barata justifica-se pela rapidez e simplicidade.
-
----
+✅ **Rota terrestre escolhida** — entrega em ~23h com um único meio de transporte, menor complexidade logística. A diferença de ~1 400 € face à opção mais barata justifica-se pela rapidez e simplicidade.
 
 ## Ferramenta Excel VBA
 
 Interface gráfica interativa desenvolvida em VBA para consulta e gestão de todas as soluções.
 
-### Dashboard da solução
-
-![Dashboard Alínea A](images/tool_alinea_a.png)
-
-### Escalonamento quinzenal de motoristas
-
-![Escalonamento](images/tool_scheduling.png)
+![Dashboard principal](images/tool_dashboard.png)
 
 ### Detalhe de rota
 
 ![Detalhe de rota](images/tool_route_detail.png)
+
+### Escalonamento quinzenal de motoristas
+
+![Escalonamento](images/tool_scheduling.png)
 
 ### Consulta de clientes e distâncias
 
@@ -138,8 +120,6 @@ Interface gráfica interativa desenvolvida em VBA para consulta e gestão de tod
 - Calcular automaticamente rotas pelo Método do Vizinho Mais Próximo
 - Aceder a legislação e documentação necessária para transporte nacional e internacional
 
----
-
 ## Legislação Aplicada
 
 Regulamento (CE) n.º 561/2006:
@@ -152,19 +132,14 @@ Regulamento (CE) n.º 561/2006:
 | Condução semanal máxima | 56h |
 | Condução quinzenal máxima | 90h |
 
----
-
 ## Stack Técnica
 
-`Excel Solver` · `VBA` · `Nearest Neighbor Heuristic` · `Clarke & Wright` · `Google Maps distances`
-
----
+**Excel Solver** · **VBA** · **Nearest Neighbor Heuristic** · **Clarke & Wright** · **Google Maps distances**
 
 ## Ficheiros
 
 | Ficheiro | Descrição |
 |---|---|
-| `Relatorio_VRP_ISEP_2024.pdf` | Relatório completo (56 páginas) |
 | `Ferramenta_VRP.xlsm` | Ferramenta Excel com macros VBA |
 
 ---
